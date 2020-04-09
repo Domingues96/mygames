@@ -36,3 +36,16 @@ CREATE TABLE games (
     FOREIGN KEY (g_user) REFERENCES users(u_id),
     FOREIGN KEY (g_platform) REFERENCES platforms(p_id)
 );
+
+insert into users(u_id,u_date,u_name,u_email,u_password,u_status) values 
+(null, 20200409,'usuario1','user1@user.com','123456','0'),
+(null, 20200409,'usuario2','user2@user.com','123456','1');
+
+insert into platforms(p_id,p_name) values
+(null,'Playstation 4'),
+(null,'Xbox One'),
+(null,'Nintendo Switch'),
+(null,'PC');
+
+insert into games(g_id,g_user,g_purchase,g_title,g_description,g_media,g_platform,g_status) values
+(null,'user1','20000206','Uncharted','Jogo de ação','F','Playstation 4','1');
