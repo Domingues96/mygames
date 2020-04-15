@@ -1,3 +1,4 @@
+
 -- Apaga e recria o banco de dados em "Momento de Desenvolvimento"
 DROP DATABASE IF EXISTS mygames;
 
@@ -27,7 +28,7 @@ CREATE TABLE platforms (
 CREATE TABLE games (
     g_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     g_user INT,
-    g_purchase DATE NOT NULL,
+    g_purchase DATE NOT NULL COMMENT 'Data da compra do título.',
     g_title VARCHAR (128) NOT NULL,
     g_description TEXT NOT NULL,
     g_media ENUM('F', 'D') NOT NULL DEFAULT 'F' COMMENT 'F = Física, D = Digital',
@@ -37,15 +38,16 @@ CREATE TABLE games (
     FOREIGN KEY (g_platform) REFERENCES platforms(p_id)
 );
 
-insert into users(u_id,u_date,u_name,u_email,u_password,u_status) values 
-(null, 20200409,'usuario1','user1@user.com','123456','0'),
-(null, 20200409,'usuario2','user2@user.com','123456','1');
+-- Populando a tabela users
+INSERT INTO users 
+    (u_name, u_email, u_password)
+VALUE
+    ('Joca da Silva', 'joca@silva.com', '12345');
 
-insert into platforms(p_id,p_name) values
-(null,'Playstation 4'),
-(null,'Xbox One'),
-(null,'Nintendo Switch'),
-(null,'PC');
-
-insert into games(g_id,g_user,g_purchase,g_title,g_description,g_media,g_platform,g_status) values
-(null,'user1','20000206','Uncharted','Jogo de ação','F','Playstation 4','1');
+-- Populando a tabela platforms
+INSERT INTO platforms (p_name)
+VALUES
+    ('PC Windows'),
+    ('PC Linux'),
+    ('Playstation 4'),
+    ('XBox One');
