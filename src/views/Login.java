@@ -88,11 +88,14 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setText("Senha:");
 
+        txtEmail.setText("joca@silva.com");
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
             }
         });
+
+        txtPassword.setText("12345");
 
         btnLogin.setText("Login");
         btnLogin.setEnabled(false);
@@ -159,7 +162,7 @@ public class Login extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        pack();
+        setBounds(0, 0, 372, 172);
     }// </editor-fold>//GEN-END:initComponents
 
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
