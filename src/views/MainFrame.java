@@ -253,7 +253,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JDesktopPane desktop;
     private javax.swing.JLabel lblDate;
     private javax.swing.JLabel lblLogo;
-    private javax.swing.JLabel lblUser;
+    public static javax.swing.JLabel lblUser;
     private javax.swing.JMenuBar mainMenu;
     private javax.swing.JMenu menuGames;
     private javax.swing.JMenu menuHelp;

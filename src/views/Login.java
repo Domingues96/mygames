@@ -29,8 +29,9 @@ public class Login extends javax.swing.JFrame {
             pst.setString(2, txtPassword.getText());
             res = pst.executeQuery();
             
-            if (res.next()) {
+            if (res.next()) {                
                 MainFrame mainframe = new MainFrame();
+                MainFrame.lblUser.setText(res.getString("u_name"));
                 mainframe.setVisible(true);
                 this.dispose();
                 conn.close();
